@@ -1,4 +1,3 @@
+//Current day/date
 var currentDay= $("#currentDay")
-currentDay.text(moment().format("MMMM Do, YYYY"))
-
-
+currentDay.text(moment().format("dddd, MMMM Do, YYYY"))
