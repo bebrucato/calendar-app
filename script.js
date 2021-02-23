@@ -1,9 +1,5 @@
-
-
 //Checking for the time and assigning new classes that match
 //the CSS styling sheet
-
-  
     function eachHour() {
       // get current number of hours
       var currentT = moment().hours();
@@ -30,5 +26,15 @@
   
     eachHour();
   
-   
-    
+   $(".saveBtn").on("click", function() {
+          var value = $(this).siblings(".description").val();
+          var time = $(this).parent().attr("id");
+      
+          localStorage.setItem(time, value);
+    });
+
+    var interval = setInterval(hourUpdater, 15000);
+
+    $("#currentDay").text(moment().format("dddd, MMMM yy"));
+
+      
